@@ -10,7 +10,7 @@
 <a href="/FirstSpringMVC/studentForm.html?siteLanguage=en">English</a> |
 <a href="/FirstSpringMVC/studentForm.html?siteLanguage=fr">Tagalog</a>
 	<form:errors path="sf.*"/>
-		<form action="/FirstSpringMVC/stundeFormSubmit.html" method="Post">
+		<form action="/FirstSpringMVC/studentFormSubmit.html" method="Post">
 			<table>
 				<tr>
 					<td><h1>Student-Form</h1></td>

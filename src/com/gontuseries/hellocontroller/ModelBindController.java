@@ -3,6 +3,7 @@ package com.gontuseries.hellocontroller;
 import java.io.IOException;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 
 import javax.validation.Valid;
 
@@ -13,8 +14,10 @@ import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -37,7 +40,7 @@ public class ModelBindController {
 	@RequestMapping(value = "/studentForm.html", method = RequestMethod.GET)
 	public ModelAndView generateForm() throws Exception {
 
-		String exceptionOccured = "HAHAHAHA";
+		String exceptionOccured = "HAHAHAHA1";
 
 		if (exceptionOccured.equalsIgnoreCase("NULL_POINTER")) {
 			throw new NullPointerException("Null Pointer Exception");
@@ -54,7 +57,7 @@ public class ModelBindController {
 		return mv;
 	}
 
-	@RequestMapping(value = "/stundeFormSubmit.html", method = RequestMethod.POST)
+	@RequestMapping(value = "/studentFormSubmit.html", method = RequestMethod.POST)
 	public ModelAndView submitStudentForm(
 			@Valid @ModelAttribute("sf") StudentForm sf, BindingResult bresult) {
 		ModelAndView mv = new ModelAndView();
@@ -98,4 +101,6 @@ public class ModelBindController {
 //		System.out.println("Unknow Exception found: " + e);
 //		return "Exception";
 //	}
+	
+	
 }

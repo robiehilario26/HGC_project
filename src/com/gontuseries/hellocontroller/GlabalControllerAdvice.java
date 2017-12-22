@@ -2,8 +2,10 @@ package com.gontuseries.hellocontroller;
 
 import java.io.IOException;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.ResponseStatus;
 @ControllerAdvice
 public class GlabalControllerAdvice {
 	
@@ -21,7 +23,7 @@ public class GlabalControllerAdvice {
 		return "IOException";
 
 	}
-
+	@ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR)
 	@ExceptionHandler(value = Exception.class)
 	public String handleException(Exception e) {
 		System.out.println("Unknow Exception found: " + e);
